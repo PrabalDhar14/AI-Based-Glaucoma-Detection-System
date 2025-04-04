@@ -1,0 +1,139 @@
+/* General Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f8fb;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Result Container */
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Result Box */
+
+.result-box {
+    background-color: #fff;
+    width: 500px;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/* Header Section */
+
+.header h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+
+/* Result Section */
+
+.result-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+/* Eye Image */
+
+.eye-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+
+
+/* Result Info */
+
+.result-info {
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+/* Result Status Styling */
+
+.result-status {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+/* Positive & Negative Results */
+
+.positive {
+    color: #dc3545;
+    /* Red for positive */
+}
+
+.negative {
+    color: #28a745;
+    /* Green for negative */
+}
+
+
+/* Recommendation Text */
+
+.recommendation {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+
+/* Extra Info Section */
+
+.extra-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.extra-info h3 {
+    color: #343a40;
+    margin-bottom: 8px;
+}
+
+
+/* Back Button */
+
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}

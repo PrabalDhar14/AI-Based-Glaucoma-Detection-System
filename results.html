@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glaucoma Detection Result">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+    <title>Glaucoma Detection Result</title>
+</head>
+
+<body>
+    <div class="result-container">
+        <div class="result-box">
+            <div class="header">
+                <h1>Glaucoma Detection Result</h1>
+                <p>Your eye analysis report is ready.</p>
+            </div>
+
+            <!-- Result Section -->
+            <div class="result-section">
+                <img src="{{ filepath }}" alt="Uploaded Eye Image" class="eye-image">
+
+                <div class="result-info">
+                    <h2>Diagnosis Result</h2>
+                    <p class="result-status {{ 'positive' if result == 'Positive for Glaucoma' else 'negative' }}">
+                        {{ result }}
+                    </p>
+                    <p class="recommendation">
+                        {% if result == 'Positive for Glaucoma' %}
+                        ⚠️ Immediate consultation with an ophthalmologist is recommended.
+                        {% else %}
+                        ✅ No signs of glaucoma detected. Regular eye check-ups are still advised.
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="extra-info">
+                <h3>What to do next?</h3>
+                <p>If the result is positive, book an appointment with your nearest eye specialist to get further diagnosis and treatment.</p>
+            </div>
+
+            <a href="/dashboard" class="btn-back">Upload Another Image</a>
+        </div>
+    </div>
+</body>
+
+</html>

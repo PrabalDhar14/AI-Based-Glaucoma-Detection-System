@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Upload Eye Image</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Upload Eye Image for Glaucoma Detection</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+                <label for="file">Choose an image (PNG, JPG, JPEG)</label>
+                <input type="file" name="file" accept="image/png, image/jpeg" required>
+                
+                <button type="submit" class="btn-primary">Upload and Analyze</button>
+            </form>
+
+            <p class="text-small">
+                <a href="/dashboard" class="link">Go back to Dashboard</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

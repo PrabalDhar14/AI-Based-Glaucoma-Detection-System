@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaucoma Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <h1>🩺 MedScan</h1>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/register" class="btn">Sign Up</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>AI-Based Glaucoma Detection System</h1>
+                <p>Accurately analyze retinal images and detect glaucoma at an early stage using cutting-edge machine learning models.</p>
+                <div class="hero-buttons">
+                    <a href="/login" class="btn">Login to Get Started</a>
+                    <a href="/register" class="btn btn-outline">Create an Account</a>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Why Choose MedScan?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>AI-Powered</h3>
+                    <p>Our system uses deep learning models to provide high accuracy in glaucoma detection.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Secure & Reliable</h3>
+                    <p>We ensure data privacy and secure image storage with advanced encryption protocols.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Fast Results</h3>
+                    <p>Get instant and reliable analysis of eye images with detailed reports.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 MedScan. All rights reserved.</p>
+            <p>Website developed by Prabal Dhar. <br> Project by [Team 1].</p>
+        </footer>
+    </div>
+
+    <!-- Firebase & JS Links -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+
+    <!-- Link to database.js -->
+    <script type="module" src="{{ url_for('static', filename='js/database.js') }}"></script>
+</body>
+</html>
+<script type="module" src="/path/to/database.js"></script>
+<script type="module" src="js/database.js"></script>
