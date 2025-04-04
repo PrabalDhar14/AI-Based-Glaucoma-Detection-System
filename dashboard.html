@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaucoma Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>🩺 MedScan</h2>
+            <ul>
+                <li><a href="/">🏠 Home</a></li>
+                <li><a href="/dashboard" class="active">📊 Dashboard</a></li>
+                <li><a href="/logout">🚪 Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Glaucoma Detection Dashboard</h1>
+                <p>Welcome, <strong>{{ session['user'] }}</strong>!</p>
+            </div>
+
+            <div class="content">
+                <!-- File Upload Section -->
+                <div class="upload-box">
+                    <h3>Upload Eye Image</h3>
+                    <form action="/dashboard" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="file" accept=".png, .jpg, .jpeg" required>
+                        <button type="submit">Upload & Analyze</button>
+                    </form>
+                    {% if error %}
+                        <p class="error">{{ error }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Prediction Results -->
+                {% if result %}
+                <div class="result-box">
+                    <h3>🧠 Analysis Result</h3>
+                    <p><strong>Prediction:</strong> {{ result }}</p>
+                    <div class="image-box">
+                        <img src="{{ filepath }}" alt="Uploaded Eye Image">
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

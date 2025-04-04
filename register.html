@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register to Glaucoma Detection System">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">
+    <script type ="module" src= "register.js" defer></script>
+    
+    <title>Register - Glaucoma Detection System</title>
+</head>
+
+<body>
+
+    <!-- Registration Wrapper -->
+    <div class="register-wrapper">
+        <div class="register-box">
+            <div class="register-header">
+                <h2>Create Your Account</h2>
+                <p>Join the Glaucoma Detection System to monitor and analyze eye health.</p>
+            </div>
+
+            <!-- Error Message -->
+            {% if error %}
+            <div class="error-box">{{ error }}</div>
+            {% endif %}
+
+            <!-- Registration Form -->
+            <form method="POST" action="/register" class="register-form">
+                <!-- Full Name -->
+                <div class="input-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Email Address -->
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}"
+                        required>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="input-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required max="{{ max_date }}">
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password"
+                        placeholder="Confirm your password" required>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="terms-box">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">terms and conditions</a>.</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-register">Create Account</button>
+            </form>
+
+            <p class="login-link">Already have an account? <a href="/login">Sign in here</a></p>
+        </div>
+    </div>
+
+    <!-- Link JavaScript (Optional for Validation or Extra Functions) -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+</body>
+
+</html>
